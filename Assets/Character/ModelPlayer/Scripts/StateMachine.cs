@@ -66,7 +66,7 @@ public class StateMachine : MonoBehaviour
 
     void StatSvicher()
     {
-        print(currentState);
+        //print(currentState);
         switch (currentState)
         {
             case stateMove.idle:

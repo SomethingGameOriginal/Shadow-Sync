@@ -215,6 +215,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1293743033999797292, guid: 247c0f3a75fa2c2488ed7a0c017287e1, type: 3}
+      propertyPath: jumpForce
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293743033999797292, guid: 247c0f3a75fa2c2488ed7a0c017287e1, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1553205770}

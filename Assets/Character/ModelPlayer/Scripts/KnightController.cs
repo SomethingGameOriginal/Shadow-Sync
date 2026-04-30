@@ -75,6 +75,7 @@ public class KnightController : MonoBehaviour
         {
             //Прыжок
             rb.linearVelocity = new Vector2(rb.linearVelocityX, jumpForce);
+            //rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Force);
         }
         else if (stateMachine.currentState == StateMachine.stateMove.grounded)
         {
