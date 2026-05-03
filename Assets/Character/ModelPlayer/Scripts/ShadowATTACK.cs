@@ -4,11 +4,11 @@ using UnityEngine.SceneManagement;
 public class ShadowATTACK : MonoBehaviour
 {
     private Animator animator;
-    private StateMachine stateMachine;
+    private ShadowStateMachine shadowStateMachine;
     void Start()
     {
         animator = GetComponent<Animator>();
-        stateMachine = GetComponent<StateMachine>();
+        shadowStateMachine = GetComponent<ShadowStateMachine>();
     }
 
     void Update()
@@ -26,12 +26,7 @@ public class ShadowATTACK : MonoBehaviour
         }
         else if (collision.tag == "mirror")
         {
-            //stateMachine.enabled = false;
-
-            //Rigidbody2D rb = GetComponent<Rigidbody2D>();
-            //rb.simulated = false;
-
-            animator.Play("Death");
+            shadowStateMachine.currentState = ShadowStateMachine.stateMove.death;
         }
     }
 }

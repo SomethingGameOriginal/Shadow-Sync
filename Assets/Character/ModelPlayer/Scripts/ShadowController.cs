@@ -19,7 +19,7 @@ public class ShadowController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         boxCollider2D = GetComponent<BoxCollider2D>();
 
-        rb.mass = 0;
+        rb.mass = 1;
         //boxCollider2D.size = new Vector2(0.17f, 0.76f);
         //boxCollider2D.edgeRadius = 0.1f;
     }
@@ -55,12 +55,16 @@ public class ShadowController : MonoBehaviour
         {
             animator.Play("Grounded");
         }
+        else if (stateMachine.currentState == ShadowStateMachine.stateMove.death)
+        {
+            animator.Play("Death");
+        }
     }
 
     void KnightMovement()
     {
         //Движение влево, право
-        if (gameManager.isShadowWalk == true)
+        if (gameManager.isShadowWalk == true && stateMachine.currentState != ShadowStateMachine.stateMove.death)
         {
             HorizontalMovement();
         }
@@ -77,6 +81,7 @@ public class ShadowController : MonoBehaviour
         {
             //Прыжок
             rb.linearVelocity = new Vector2(rb.linearVelocityX, jumpForce);
+            //rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
         else if (stateMachine.currentState == ShadowStateMachine.stateMove.grounded)
         {

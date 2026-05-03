@@ -26,6 +26,8 @@ public class MirrorTrigger : MonoBehaviour
         if (collision.tag == "Shadow")
         {
             StartCoroutine(AnimationScene());
+            Rigidbody2D rb = collision.GetComponent<Rigidbody2D>();
+            rb.constraints = RigidbodyConstraints2D.FreezeAll;
         }
         else if (collision.tag == "Player")
         {

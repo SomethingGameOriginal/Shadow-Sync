@@ -20,21 +20,22 @@ public class StateMachine : MonoBehaviour
     }
     public stateMove currentState;
 
-    private bool isJumpPressed;
+    //private bool isJumpPressed;
     private bool jumpDelay;
-    private float jumpPressTime;
-    private bool jumpDelayFinish;
+    //private float jumpPressTime;
+    //private bool jumpDelayFinish;
     public int jumpCoyote;
-    public bool jumpRequest; //запрос на прыжок
+    //public bool jumpRequest; //запрос на прыжок
     public bool jumpOne = false;
     public float jumpMaxTime;
 
     public Grounded groundedDelay;
     public Grounded grounded;
     
-
     private Rigidbody2D rb;
     private float Horizontal;
+
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -49,19 +50,19 @@ public class StateMachine : MonoBehaviour
 
     void GetInput()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            isJumpPressed = true;
-            jumpRequest = false; //сброс прыжка
-            //запоминает момент времени когда нажали на ПРОБЕЕЕЕЕЕЕЛ
-            jumpPressTime = Time.time;
-        }
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            jumpDelayFinish = false;
-            isJumpPressed = false;
-            jumpRequest = true;
-        }
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    isJumpPressed = true;
+        //    jumpRequest = false; //сброс прыжка
+        //    //запоминает момент времени когда нажали на ПРОБЕЕЕЕЕЕЕЛ
+        //    jumpPressTime = Time.time;
+        //}
+        //if (Input.GetKeyUp(KeyCode.Space))
+        //{
+        //    jumpDelayFinish = false;
+        //    isJumpPressed = false;
+        //    jumpRequest = true;
+        //}
     }
 
     void StatSvicher()
@@ -70,18 +71,18 @@ public class StateMachine : MonoBehaviour
         switch (currentState)
         {
             case stateMove.idle:
-                if (jumpDelay == true && !jumpDelayFinish)
+                if (jumpDelay == true && !GameManager.instance.jumpDelayFinish)
                 {
-                    jumpDelayFinish = true;
+                    GameManager.instance.jumpDelayFinish = true;
                     currentState = stateMove.startJump;
                 }
                 else if (Horizontal != 0)
                 {
                     currentState = stateMove.walk;
                 }
-                else if (isJumpPressed == true && !jumpDelayFinish)
+                else if (GameManager.instance.isJumpPressed == true && !GameManager.instance.jumpDelayFinish)
                 {
-                    jumpDelayFinish = true;
+                    GameManager.instance.jumpDelayFinish = true;
                     currentState = stateMove.startJump;
                 }
                 break;
@@ -89,7 +90,7 @@ public class StateMachine : MonoBehaviour
             case stateMove.startJump:
                 if (grounded.isGroundInt >= jumpCoyote)
                 {
-                    if (Time.time - jumpPressTime > jumpMaxTime || !isJumpPressed)
+                    if (Time.time - GameManager.instance.jumpPressTime > jumpMaxTime || !GameManager.instance.isJumpPressed)
                     {
                         currentState = stateMove.rising;
                     }
@@ -101,13 +102,13 @@ public class StateMachine : MonoBehaviour
                 }
                 break;
             case stateMove.rising:
-                if (rb.linearVelocityY < 0)
+                if (rb.linearVelocityY < -3)
                 {
                     currentState = stateMove.falling;
                 }
                 break;
             case stateMove.falling:
-                if (groundedDelay.isGroundDelay == true && isJumpPressed)
+                if (groundedDelay.isGroundDelay == true && GameManager.instance.isJumpPressed)
                 {
                     jumpDelay = true;
                     groundedDelay.isGroundDelay = false;
@@ -116,7 +117,7 @@ public class StateMachine : MonoBehaviour
                 {
                     currentState = stateMove.grounded;
                 }
-                else if (isJumpPressed == true && grounded.isGroundInt < jumpCoyote)
+                else if (GameManager.instance.isJumpPressed == true && grounded.isGroundInt < jumpCoyote)
                 {
                     rb.linearVelocityY = 0;
                     currentState = stateMove.startJump;
@@ -134,14 +135,14 @@ public class StateMachine : MonoBehaviour
                 break;
 
             case stateMove.walk:
-                if (jumpDelay == true && !jumpDelayFinish)
+                if (jumpDelay == true && !GameManager.instance.jumpDelayFinish)
                 {
-                    jumpDelayFinish = true;
+                    GameManager.instance.jumpDelayFinish = true;
                     currentState = stateMove.startJump;
                 }
-                else if (isJumpPressed == true && grounded.isGroundInt < jumpCoyote && !jumpDelayFinish)
+                else if (GameManager.instance.isJumpPressed == true && grounded.isGroundInt < jumpCoyote && !GameManager.instance.jumpDelayFinish)
                 {
-                    jumpDelayFinish = true;
+                    GameManager.instance.jumpDelayFinish = true;
                     currentState = stateMove.startJump;
                 }
                 else if (rb.linearVelocityY < -3)
