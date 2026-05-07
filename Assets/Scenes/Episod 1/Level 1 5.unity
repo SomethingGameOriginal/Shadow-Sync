@@ -1611,6 +1611,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isShadowWalk: 0
+  isJumpPressed: 0
+  jumpPressTime: 0
+  jumpDelayFinish: 0
+  jumpRequest: 0
 --- !u!4 &1000403441
 Transform:
   m_ObjectHideFlags: 0
@@ -3108,6 +3112,10 @@ PrefabInstance:
     - target: {fileID: 502986032132075917, guid: 8a23ebe50427b1e4ebc7edecb467ce01, type: 3}
       propertyPath: m_Name
       value: Mirror
+      objectReference: {fileID: 0}
+    - target: {fileID: 1606944477000208289, guid: 8a23ebe50427b1e4ebc7edecb467ce01, type: 3}
+      propertyPath: scenesNumber
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2732046041453355859, guid: 8a23ebe50427b1e4ebc7edecb467ce01, type: 3}
       propertyPath: m_LocalPosition.x

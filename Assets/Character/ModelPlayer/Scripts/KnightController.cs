@@ -21,7 +21,7 @@ public class KnightController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         boxCollider2D = GetComponent<BoxCollider2D>();
 
-        rb.mass = 1;
+        rb.mass = 6;
         //boxCollider2D.size = new Vector2(0.17f, 0.76f);
         //boxCollider2D.edgeRadius = 0.1f;
     }

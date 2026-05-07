@@ -74,7 +74,7 @@ public class ShadowStateMachine : MonoBehaviour
             case stateMove.idle:
                 if (jumpDelay == true && !GameManager.instance.jumpDelayFinish)
                 {
-                    GameManager.instance.jumpDelayFinish = true;
+                    //GameManager.instance.jumpDelayFinish = true;
                     currentState = stateMove.startJump;
                 }
                 else if (Horizontal != 0)
@@ -83,7 +83,7 @@ public class ShadowStateMachine : MonoBehaviour
                 }
                 else if (GameManager.instance.isJumpPressed == true && !GameManager.instance.jumpDelayFinish)
                 {
-                    GameManager.instance.jumpDelayFinish = true;
+                    //GameManager.instance.jumpDelayFinish = true;
                     currentState = stateMove.startJump;
                 }
                 break;
@@ -138,12 +138,12 @@ public class ShadowStateMachine : MonoBehaviour
             case stateMove.walk:
                 if (jumpDelay == true && !GameManager.instance.jumpDelayFinish)
                 {
-                    GameManager.instance.jumpDelayFinish = true;
+                    //GameManager.instance.jumpDelayFinish = true;
                     currentState = stateMove.startJump;
                 }
                 else if (GameManager.instance.isJumpPressed == true && grounded.isGroundInt < jumpCoyote && !GameManager.instance.jumpDelayFinish)
                 {
-                    GameManager.instance.jumpDelayFinish = true;
+                    //GameManager.instance.jumpDelayFinish = true;
                     currentState = stateMove.startJump;
                 }
                 else if (rb.linearVelocityY < -3)
