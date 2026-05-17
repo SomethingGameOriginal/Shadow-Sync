@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: aad3fcd8e123ab742bf8c5ad15ac8f56
+guid: 4bc0bc82f8bdbf248b282bb30d559faf
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7915982006757861402
-    second: WeightlessPlatforms_0
+      213: 1831659762239432934
+    second: 12345_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: FallingPlatform1
+      name: 12345_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 8
-        width: 8
-        height: 8
+        y: 5
+        width: 5
+        height: 5
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,20 +128,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6e750d63e48c42290800000000000000
-      internalID: -7915982006757861402
+      spriteID: 6e868a569dc5b6910800000000000000
+      internalID: 1831659762239432934
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WeightlessPlatforms1
+      name: 12345_1
       rect:
         serializedVersion: 2
-        x: 8
-        y: 8
-        width: 8
-        height: 8
+        x: 5
+        y: 5
+        width: 5
+        height: 5
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5eae3a4361eb30c48bfa9c507552fe18
-      internalID: -259534208
+      spriteID: 080273c9597c52e4d84d8420cb452f26
+      internalID: -1401314096
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ShadowPlatforms1
+      name: 12345_2
       rect:
         serializedVersion: 2
-        x: 16
-        y: 8
-        width: 8
-        height: 8
+        x: 10
+        y: 5
+        width: 5
+        height: 5
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,20 +172,64 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c02d83e04daef774babb03f94ef2e9a0
-      internalID: -1348195005
+      spriteID: 21b0eba376658d947b565bdbd7afced3
+      internalID: -538316805
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FallingPlatform2
+      name: 12345_3
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 5
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7226a3363e01bbd4c800d92ec7a531e4
+      internalID: -1390243880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 12345_4
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 5
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cf324c3ec53d4948a593996bc4e1e36
+      internalID: 378320996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 12345_5
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 8
-        height: 8
+        width: 5
+        height: 5
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,20 +238,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d0bfe47d04d071f4bac8c95fc7560033
-      internalID: 634139162
+      spriteID: 01b121b59d7f1d14b89866ed463b2925
+      internalID: -154418174
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WeightlessPlatforms2
+      name: 12345_6
       rect:
         serializedVersion: 2
-        x: 8
+        x: 5
         y: 0
-        width: 8
-        height: 8
+        width: 5
+        height: 5
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,20 +260,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f750b5c22a0844742999e53a0c23d4e0
-      internalID: -814931837
+      spriteID: a4cef43e5b63c5e46a1aef94f6f9bef5
+      internalID: 771145126
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ShadowPlatforms2
+      name: 12345_7
       rect:
         serializedVersion: 2
-        x: 16
+        x: 10
         y: 0
-        width: 8
-        height: 8
+        width: 5
+        height: 5
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -238,8 +282,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb7c90d00af341f4fae286d705083fe3
-      internalID: 1348490919
+      spriteID: 39980345848ef134bab6354b8641cded
+      internalID: -178104624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 12345_8
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 0
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc4b47b08c1e615439bea2b4f232a495
+      internalID: -848708215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 12345_9
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 0
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 202a06a2ff2cca24ab5fddb7006e9966
+      internalID: -1344220833
       vertices: []
       indices: 
       edges: []
@@ -248,7 +336,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 8dfde38d4ce5add4bad68e68f10752d6
+    spriteID: eae386fd3450ad04ba4d06b94c219431
     internalID: 0
     vertices: []
     indices: 
@@ -258,12 +346,16 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      FallingPlatform1: -7915982006757861402
-      FallingPlatform2: 634139162
-      ShadowPlatforms1: -1348195005
-      ShadowPlatforms2: 1348490919
-      WeightlessPlatforms1: -259534208
-      WeightlessPlatforms2: -814931837
+      12345_0: 1831659762239432934
+      12345_1: -1401314096
+      12345_2: -538316805
+      12345_3: -1390243880
+      12345_4: 378320996
+      12345_5: -154418174
+      12345_6: 771145126
+      12345_7: -178104624
+      12345_8: -848708215
+      12345_9: -1344220833
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

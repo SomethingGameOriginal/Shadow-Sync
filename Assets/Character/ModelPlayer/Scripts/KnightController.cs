@@ -9,7 +9,7 @@ public class KnightController : MonoBehaviour
 
     public int speed;
     public float jumpForce;
-    public bool isKey = false;
+    public string isKey;
 
     public StateMachine stateMachine;
     public Wall wall;
@@ -110,7 +110,7 @@ public class KnightController : MonoBehaviour
     {
         if (collision.tag == "Key")
         {
-            isKey = true;
+            isKey = collision.gameObject.name;
         }
     }
 }

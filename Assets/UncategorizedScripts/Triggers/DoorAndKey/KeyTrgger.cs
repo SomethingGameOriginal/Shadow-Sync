@@ -8,6 +8,7 @@ public class KeyTrgger : MonoBehaviour
     private bool isPlayerMove = false;
     private GameObject player;
     private int side;
+    private bool isfly = true;
 
     public int speed;
     public Vector3 offset;
@@ -18,9 +19,9 @@ public class KeyTrgger : MonoBehaviour
     void Update()
     {
         if (player == null || isPlayerMove == false)
-        {
             return;
-        }
+        if (isfly == false)
+            return;
         Vector2 direction = ((player.transform.position + offset * side) - transform.position).normalized;
         float distans = ((player.transform.position + offset * side) - transform.position).magnitude;
         if (distans > 0.2f)
@@ -35,6 +36,10 @@ public class KeyTrgger : MonoBehaviour
             player = collision.gameObject;
             knightController = player.GetComponent<KnightController>();
             isPlayerMove = true;
+        }
+        else if (collision.tag == "Door")
+        {
+            isfly = false;
         }
     }
 

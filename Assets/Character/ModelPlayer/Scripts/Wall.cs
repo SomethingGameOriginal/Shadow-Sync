@@ -13,19 +13,26 @@ public class Wall : MonoBehaviour
 
     void Update()
     {
-        
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag != "Key" && collision.tag != "Door" && collision.tag != "mirror")
         {
-            print("XD");
             isWall = true;
         }    
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         isWall = false;
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.tag != "Key" && collision.tag != "Door" && collision.tag != "mirror")
+        {
+            isWall = true;
+        }
     }
 }

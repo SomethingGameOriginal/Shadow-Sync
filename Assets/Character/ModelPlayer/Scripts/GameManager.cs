@@ -9,7 +9,6 @@ public class GameManager : MonoBehaviour
     public bool isJumpPressed;
 
     public float jumpPressTime;
-    public bool jumpDelayFinish;
     public bool jumpRequest; //запрос на прыжок
     void Start()
     {
@@ -29,7 +28,6 @@ public class GameManager : MonoBehaviour
         }
         if (Input.GetKeyUp(KeyCode.Space))
         {
-            jumpDelayFinish = false;
             isJumpPressed = false;
             jumpRequest = true;
         }

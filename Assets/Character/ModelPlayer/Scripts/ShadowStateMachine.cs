@@ -22,18 +22,15 @@ public class ShadowStateMachine : MonoBehaviour
     }
     public stateMove currentState;
 
-    //private bool isJumpPressed;
     private bool jumpDelay;
-    //private float jumpPressTime;
-    //private bool jumpDelayFinish;
     public int jumpCoyote;
-    //public bool jumpRequest; //запрос на прыжок
     public bool jumpOne = false;
     public float jumpMaxTime;
+    private bool jumpConsumed = false;
 
     public Grounded groundedDelay;
     public Grounded grounded;
-    
+
 
     private Rigidbody2D rb;
     private float Horizontal;
@@ -44,26 +41,10 @@ public class ShadowStateMachine : MonoBehaviour
 
     void Update()
     {
-        GetInput();
         GetMovement();
+        if (!GameManager.instance.isJumpPressed)
+            jumpConsumed = false;
         StatSvicher();
-    }
-
-    void GetInput()
-    {
-        //if (Input.GetKeyDown(KeyCode.Space))
-        //{
-        //    isJumpPressed = true;
-        //    jumpRequest = false; //сброс прыжка
-        //    //запоминает момент времени когда нажали на ПРОБЕЕЕЕЕЕЕЛ
-        //    jumpPressTime = Time.time;
-        //}
-        //if (Input.GetKeyUp(KeyCode.Space))
-        //{
-        //    jumpDelayFinish = false;
-        //    isJumpPressed = false;
-        //    jumpRequest = true;
-        //}
     }
 
     void StatSvicher()
@@ -72,23 +53,24 @@ public class ShadowStateMachine : MonoBehaviour
         switch (currentState)
         {
             case stateMove.idle:
-                if (jumpDelay == true && !GameManager.instance.jumpDelayFinish)
+                if (jumpDelay == true)
                 {
-                    //GameManager.instance.jumpDelayFinish = true;
+                    jumpDelay = false;
                     currentState = stateMove.startJump;
                 }
                 else if (Horizontal != 0)
                 {
                     currentState = stateMove.walk;
                 }
-                else if (GameManager.instance.isJumpPressed == true && !GameManager.instance.jumpDelayFinish)
+                else if (GameManager.instance.isJumpPressed == true && !jumpConsumed)
                 {
-                    //GameManager.instance.jumpDelayFinish = true;
+                    jumpConsumed = true;
                     currentState = stateMove.startJump;
                 }
                 break;
 
             case stateMove.startJump:
+                jumpDelay = false;
                 if (grounded.isGroundInt >= jumpCoyote)
                 {
                     if (Time.time - GameManager.instance.jumpPressTime > jumpMaxTime || !GameManager.instance.isJumpPressed)
@@ -118,8 +100,9 @@ public class ShadowStateMachine : MonoBehaviour
                 {
                     currentState = stateMove.grounded;
                 }
-                else if (GameManager.instance.isJumpPressed == true && grounded.isGroundInt < jumpCoyote)
+                else if (GameManager.instance.isJumpPressed == true && grounded.isGroundInt < jumpCoyote && !jumpConsumed)
                 {
+                    jumpConsumed = true;
                     rb.linearVelocityY = 0;
                     currentState = stateMove.startJump;
                 }
@@ -136,14 +119,13 @@ public class ShadowStateMachine : MonoBehaviour
                 break;
 
             case stateMove.walk:
-                if (jumpDelay == true && !GameManager.instance.jumpDelayFinish)
+                if (jumpDelay == true)
                 {
-                    //GameManager.instance.jumpDelayFinish = true;
                     currentState = stateMove.startJump;
                 }
-                else if (GameManager.instance.isJumpPressed == true && grounded.isGroundInt < jumpCoyote && !GameManager.instance.jumpDelayFinish)
+                else if (GameManager.instance.isJumpPressed == true && grounded.isGroundInt < jumpCoyote && !jumpConsumed)
                 {
-                    //GameManager.instance.jumpDelayFinish = true;
+                    jumpConsumed = true;
                     currentState = stateMove.startJump;
                 }
                 else if (rb.linearVelocityY < -3)

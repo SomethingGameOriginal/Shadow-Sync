@@ -13,7 +13,6 @@ public class Grounded : MonoBehaviour
 
     void Update()
     {
-        print(isGround);
         if (isGround == true)
         {
             isGroundInt = 0;
