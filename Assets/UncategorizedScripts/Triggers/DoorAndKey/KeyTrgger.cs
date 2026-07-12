@@ -12,6 +12,7 @@ public class KeyTrgger : MonoBehaviour
 
     public int speed;
     public Vector3 offset;
+    public string doorName;
     void Start()
     {
         
@@ -37,7 +38,7 @@ public class KeyTrgger : MonoBehaviour
             knightController = player.GetComponent<KnightController>();
             isPlayerMove = true;
         }
-        else if (collision.tag == "Door")
+        else if (collision.tag == "Door" && collision.gameObject.name == doorName)
         {
             isfly = false;
         }

@@ -37,6 +37,22 @@ public class Grounded : MonoBehaviour
             }
         }
     }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == 3 || collision.gameObject.layer == 6)
+        {
+            if (coliderName == "DelayJump")
+            {
+                isGroundDelay = true;
+            }
+            else if (coliderName == "Grounded")
+            {
+                isGround = true;
+            }
+        }
+    }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.layer == 3 || collision.gameObject.layer == 6)

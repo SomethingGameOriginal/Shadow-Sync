@@ -5,9 +5,6 @@ TextureImporter:
   - first:
       213: 857312311372029537
     second: rose_0
-  - first:
-      213: -5225234954479053693
-    second: rose_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -124,7 +121,7 @@ TextureImporter:
         width: 8
         height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -151,10 +148,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 384525e4e7c3c77b0800000000000000
-      internalID: -5225234954479053693
+      spriteID: 465fa7410e85c0448888056491790da1
+      internalID: 2131705061
       vertices: []
       indices: 
       edges: []
@@ -175,8 +172,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cdb3fc6a7c0bc0c43b5e7054ea43750e
-      internalID: -1950956926
+      spriteID: a23d3d310e0d356419d491f0f7b14ae2
+      internalID: 1279885872
       vertices: []
       indices: 
       edges: []
@@ -197,8 +194,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bedd7760b28d80c478129302694aa3b8
-      internalID: -1477584063
+      spriteID: 45259b70649c3374c97b72dea1223893
+      internalID: 1488807124
       vertices: []
       indices: 
       edges: []
@@ -219,8 +216,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 355f407c7c8298e44a382db6c036b46b
-      internalID: -1481736440
+      spriteID: 9c1893e48ef027b48944cbc2d121f6a1
+      internalID: -1884140880
       vertices: []
       indices: 
       edges: []
@@ -241,8 +238,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5481f121fa6be0a47ae972475504cf4b
-      internalID: -1620775064
+      spriteID: 7c503844bea1f8e4da32c228d4a7af97
+      internalID: 891287988
       vertices: []
       indices: 
       edges: []
@@ -263,14 +260,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c31aa98ff1bfc4e41b36cb2db8053ce1
-      internalID: 1452689541
+      spriteID: 4ddc78c2622c8754b95d4d83a2361429
+      internalID: 1119739847
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rose_7
+      name: rose_8
       rect:
         serializedVersion: 2
         x: 0
@@ -285,14 +282,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 86f36f3a3a68d9346841f64597ca8074
-      internalID: -74502356
+      spriteID: 21a894cbd2052ff41a6e6a5f7474c017
+      internalID: -1355653195
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rose_8
+      name: rose_9
       rect:
         serializedVersion: 2
         x: 8
@@ -307,14 +304,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 52823b6c1c82def4b8092c0f6f5f8c49
-      internalID: -222382119
+      spriteID: 3482593b35878d9439fcaf73aa249d11
+      internalID: 589235809
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rose_9
+      name: rose_10
       rect:
         serializedVersion: 2
         x: 16
@@ -329,20 +326,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 03eb25efd959fd744b08e7862cf8782a
-      internalID: 359997787
+      spriteID: d1d7de716b6c50f43b0cf333d6cca874
+      internalID: -1801929955
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rose_10
+      name: rose_12
       rect:
         serializedVersion: 2
         x: 0
-        y: 4
+        y: 5
         width: 4
-        height: 4
+        height: 3
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -351,14 +348,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c3f8a90086f26784a90368637f592cdd
-      internalID: -335910975
+      spriteID: dc2f7c469a3da6e4c8964d69f0200473
+      internalID: -1621643181
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rose_11
+      name: rose_13
       rect:
         serializedVersion: 2
         x: 5
@@ -373,36 +370,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 83a719cb2c43936468a0d38c41ed35ed
-      internalID: -1128189744
+      spriteID: f4b2f8246b99208498e8676c27688ba0
+      internalID: -2014511318
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rose_12
-      rect:
-        serializedVersion: 2
-        x: 4
-        y: 0
-        width: 4
-        height: 4
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 578ecf1b6e8e66c449bd2e438ff052e5
-      internalID: -668153909
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: rose_13
+      name: rose_14
       rect:
         serializedVersion: 2
         x: 0
@@ -417,8 +392,162 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce5d4391ffaf7ab4b82574e8b04b2318
-      internalID: -2119314889
+      spriteID: f60af3542f268bb448ec38ce16b80a47
+      internalID: 1068120612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rose_15
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 0
+        width: 4
+        height: 3
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b60e6283931d7c41a88588c769a008f
+      internalID: -99674639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rose_16
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9741c908d057c724db6d298adfae99a1
+      internalID: -1907144500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rose_17
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 0
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8f3ccba2b09b1144a12df2e1ea3ca9b
+      internalID: -2067276635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rose_18
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c8d111a8ea177a408638376b7fab754
+      internalID: 1782160685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rose_19
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 24
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58d2e79b1cbf8d440bf5c280f1bcdcd4
+      internalID: 494962799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rose_20
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 16
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f448eb3bb4a80a4439d882ec0f0ede3a
+      internalID: 1903959055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rose_21
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 8
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ab89b220453a79498c89b9b982c7cc0
+      internalID: 506452317
       vertices: []
       indices: 
       edges: []
@@ -427,7 +556,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: db3891091b6652d43bce8ec3e5794929
+    spriteID: 003dcda4ffc83894a9575cb352057a6b
     internalID: 0
     vertices: []
     indices: 
@@ -438,19 +567,26 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       rose_0: 857312311372029537
-      rose_1: -5225234954479053693
-      rose_10: -335910975
-      rose_11: -1128189744
-      rose_12: -668153909
-      rose_13: -2119314889
-      rose_2: -1950956926
-      rose_3: -1477584063
-      rose_4: -1481736440
-      rose_5: -1620775064
-      rose_6: 1452689541
-      rose_7: -74502356
-      rose_8: -222382119
-      rose_9: 359997787
+      rose_1: 2131705061
+      rose_10: -1801929955
+      rose_11: -1894547429
+      rose_12: -1621643181
+      rose_13: -2014511318
+      rose_14: 1068120612
+      rose_15: -99674639
+      rose_16: -1907144500
+      rose_17: -2067276635
+      rose_18: 1782160685
+      rose_19: 494962799
+      rose_2: 1279885872
+      rose_20: 1903959055
+      rose_21: 506452317
+      rose_3: 1488807124
+      rose_4: -1884140880
+      rose_5: 891287988
+      rose_6: 1119739847
+      rose_8: -1355653195
+      rose_9: 589235809
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

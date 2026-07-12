@@ -10,8 +10,11 @@ public class GameManager : MonoBehaviour
 
     public float jumpPressTime;
     public bool jumpRequest; //запрос на прыжок
+
+    public int sceneNumber;
     void Start()
     {
+        sceneNumber = 1;
         if (instance == null)
             instance = this;
 

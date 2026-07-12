@@ -10,6 +10,8 @@ public class MirrorTrigger : MonoBehaviour
     public int scenesNumber;
 
     public float delayToScane;
+    public bool isShadowDie = false;
+    public int mirrorSceneNumber;
     void Start()
     {
         Time.timeScale = 1;
@@ -18,7 +20,7 @@ public class MirrorTrigger : MonoBehaviour
 
     void Update()
     {
-        
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -28,6 +30,8 @@ public class MirrorTrigger : MonoBehaviour
             StartCoroutine(AnimationScene());
             Rigidbody2D rb = collision.GetComponent<Rigidbody2D>();
             rb.constraints = RigidbodyConstraints2D.FreezeAll;
+            BoxCollider2D boxCollider2D = collision.GetComponent<BoxCollider2D>();
+            boxCollider2D.enabled = false;
         }
         else if (collision.tag == "Player")
         {
@@ -46,6 +50,7 @@ public class MirrorTrigger : MonoBehaviour
     {
         Time.timeScale = 0.5f;
         yield return new WaitForSeconds(delayToScane);
-        SceneManager.LoadScene(scenesNumber);
+        Time.timeScale = 1;
+        isShadowDie = true;
     }
 }

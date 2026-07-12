@@ -48,6 +48,7 @@ public class StateMachine : MonoBehaviour
 
     void StatSvicher()
     {
+        //print(currentState);
         switch (currentState)
         {
             case stateMove.idle:
@@ -77,7 +78,7 @@ public class StateMachine : MonoBehaviour
                     }
                     jumpDelay = false;
                 }
-                else if (rb.linearVelocityY < 0)
+                else if (rb.linearVelocityY < -3)
                 {
                     currentState = stateMove.falling;
                 }
@@ -86,6 +87,10 @@ public class StateMachine : MonoBehaviour
                 if (rb.linearVelocityY < -3)
                 {
                     currentState = stateMove.falling;
+                }
+                else if (grounded.isGround == true)
+                {
+                    currentState = stateMove.grounded;
                 }
                 break;
             case stateMove.falling:

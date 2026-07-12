@@ -12,14 +12,15 @@ public class DoorTrigger : MonoBehaviour
     {
         cr2D = GetComponent<Collider2D>();
         animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
     {
-        //if (spriteRenderer.flipX == true)
-        //    side = -1;
-        //else
-        //    side = 1;
+        if (spriteRenderer.flipX == true)
+            side = -1;
+        else
+            side = 1;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

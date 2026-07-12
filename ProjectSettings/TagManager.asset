@@ -9,6 +9,10 @@ TagManager:
   - Key
   - Door
   - Key2
+  - ButtonDoor
+  - Button
+  - Grounded
+  - Wall
   layers:
   - Default
   - TransparentFX

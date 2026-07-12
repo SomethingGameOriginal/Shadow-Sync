@@ -89,6 +89,10 @@ public class ShadowStateMachine : MonoBehaviour
                 {
                     currentState = stateMove.falling;
                 }
+                else if (grounded.isGround == true)
+                {
+                    currentState = stateMove.grounded;
+                }
                 break;
             case stateMove.falling:
                 if (groundedDelay.isGroundDelay == true && GameManager.instance.isJumpPressed)
