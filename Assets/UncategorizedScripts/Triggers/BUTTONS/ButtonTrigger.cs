@@ -2,31 +2,23 @@ using UnityEngine;
 
 public class ButtonTrigger : MonoBehaviour
 {
-    private SpriteRenderer spriteRenderer;
+    public SpriteRenderer spriteRenderer;
     public BoxCollider2D bcOne;
     public BoxCollider2D bcTwo;
 
     public Sprite unpress;
     public Sprite press;
 
-    private GameObject doorOne;
-    private GameObject doorTwo;
+    public GameObject doorOne;
+    public GameObject doorTwo;
     void Start()
     {
-        spriteRenderer = GameObject.Find("Button").GetComponent<SpriteRenderer>();
-
-        bcOne = GameObject.Find("ButtonDoorOne").GetComponent<BoxCollider2D>();
-        bcTwo = GameObject.Find("ButtonDoorTwo").GetComponent<BoxCollider2D>();
-
-        doorOne = GameObject.Find("ButtonDoorOne");
-        doorTwo = GameObject.Find("ButtonDoorTwo");
-
         Door(doorTwo, true);
         bcTwo.enabled = false;
     }
     void Update()
     {
-        
+        print(press);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

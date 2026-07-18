@@ -100,7 +100,7 @@ public class KnightController : MonoBehaviour
     }
     IEnumerator UnStopPlayer(int knSceneNumber)
     {
-        yield return new WaitForSeconds(1.8f);
+        yield return new WaitForSeconds(1.6f);
 
         Destroy(shadow);
         shadow = Instantiate(shadowPrefab, shadowSpawnObj[knSceneNumber].transform.position, Quaternion.identity);
@@ -109,7 +109,7 @@ public class KnightController : MonoBehaviour
         shadow.GetComponent<Animator>().Play("Awakening");
         shadowController.enabled = false;
 
-        yield return new WaitForSeconds(1.8f);
+        yield return new WaitForSeconds(1.6f);
 
         shadowController.enabled = true;
         isStop = false;

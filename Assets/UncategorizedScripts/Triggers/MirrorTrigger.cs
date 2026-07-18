@@ -49,7 +49,7 @@ public class MirrorTrigger : MonoBehaviour
     IEnumerator AnimationScene()
     {
         Time.timeScale = 0.5f;
-        yield return new WaitForSeconds(delayToScane);
+        yield return new WaitForSeconds(1.5f);
         Time.timeScale = 1;
         isShadowDie = true;
     }

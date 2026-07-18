@@ -4,7 +4,6 @@ public class Wall : MonoBehaviour
 {
     public bool isWall = false;
     private BoxCollider2D cr2D;
-    public ButtonTrigger buttonTrigger;
     void Start()
     {
         cr2D = GetComponent<BoxCollider2D>();
@@ -26,4 +25,14 @@ public class Wall : MonoBehaviour
     {
         isWall = false;
     }
+
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.tag == "Wall")
+    //        isWall = true;
+    //}
+    //private void OnCollisionExit2D(Collision2D collision)
+    //{
+    //    isWall = false;
+    //}
 }

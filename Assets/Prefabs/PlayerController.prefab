@@ -215,7 +215,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isWall: 0
-  buttonTrigger: {fileID: 0}
 --- !u!1 &2108624850056772379
 GameObject:
   m_ObjectHideFlags: 0
@@ -19977,7 +19976,7 @@ GameObject:
   - component: {fileID: 3518785426621083494}
   m_Layer: 0
   m_Name: PlayerGrounded
-  m_TagString: Untagged
+  m_TagString: Grounded
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30123,6 +30122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f807e6018350d5c4d83878f67ac472cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
   spriteRenderer: {fileID: 0}
   speed: 5
   jumpForce: 10
@@ -30130,6 +30130,9 @@ MonoBehaviour:
   stateMachine: {fileID: 6961338630215353078}
   wall: {fileID: 357599803281064544}
   gameManager: {fileID: 0}
+  shadow: {fileID: 0}
+  shadowPrefab: {fileID: 0}
+  shadowSpawnObj: []
 --- !u!114 &6961338630215353078
 MonoBehaviour:
   m_ObjectHideFlags: 0
