@@ -4,6 +4,8 @@ public class Wall : MonoBehaviour
 {
     public bool isWall = false;
     private BoxCollider2D cr2D;
+    private int wallContactCount = 0;
+
     void Start()
     {
         cr2D = GetComponent<BoxCollider2D>();
@@ -11,28 +13,25 @@ public class Wall : MonoBehaviour
         cr2D.offset = new Vector2(0, -0.215f);
     }
 
-    void Update()
-    {
-
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Wall")
+        if (collision.CompareTag("Wall"))
+        {
+            wallContactCount++;
             isWall = true;
-    }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        isWall = false;
+        }
     }
 
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject.tag == "Wall")
-    //        isWall = true;
-    //}
-    //private void OnCollisionExit2D(Collision2D collision)
-    //{
-    //    isWall = false;
-    //}
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Wall"))
+        {
+            wallContactCount--;
+            if (wallContactCount <= 0)
+            {
+                wallContactCount = 0;
+                isWall = false;
+            }
+        }
+    }
 }

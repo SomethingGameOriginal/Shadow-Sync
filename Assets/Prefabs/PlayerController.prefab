@@ -30081,7 +30081,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.4, y: 1}
+  m_Size: {x: 0.4, y: 0.99}
   m_EdgeRadius: 0
 --- !u!50 &7763049827252635178
 Rigidbody2D:
@@ -30151,6 +30151,7 @@ MonoBehaviour:
   jumpMaxTime: 0.3
   groundedDelay: {fileID: 3044978816232374050}
   grounded: {fileID: 3518785426621083494}
+  wall: {fileID: 357599803281064544}
 --- !u!1 &9123771714899262442
 GameObject:
   m_ObjectHideFlags: 0

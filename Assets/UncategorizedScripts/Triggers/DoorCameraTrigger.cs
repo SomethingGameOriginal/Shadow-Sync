@@ -9,6 +9,7 @@ public class DoorCameraTrigger : MonoBehaviour
     public MirrorTrigger mirrorTriggerScript;
 
     private BoxCollider2D boxCollider2D;
+    private BoxCollider2D bC2D_isTrigger;
     private bool isDoorOpen;
 
     private Animator animator;
@@ -20,6 +21,15 @@ public class DoorCameraTrigger : MonoBehaviour
         cameraM = Camera.main;
         boxCollider2D = GetComponent<BoxCollider2D>();
         animator = GetComponent<Animator>();
+
+        foreach (var coll in GetComponents<BoxCollider2D>())
+        {
+            if (coll.isTrigger)
+            {
+                bC2D_isTrigger = coll;
+                break;
+            }
+        }
     }
 
     void Update()
@@ -28,6 +38,7 @@ public class DoorCameraTrigger : MonoBehaviour
         {
             isDoorOpen = true;
             boxCollider2D.enabled = false;
+            bC2D_isTrigger.enabled = true;
 
             animator.Play("openDoor");
         }
@@ -41,6 +52,8 @@ public class DoorCameraTrigger : MonoBehaviour
     }
     IEnumerator CameraMoven(Vector3 toPosition, float deration)
     {
+        bC2D_isTrigger.enabled = false;
+
         Vector3 fromPosition = cameraM.transform.position;
         float fromSize = cameraM.orthographicSize;
         float timeMove = 0f;

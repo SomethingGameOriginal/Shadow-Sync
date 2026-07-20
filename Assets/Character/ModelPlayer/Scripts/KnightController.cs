@@ -75,13 +75,21 @@ public class KnightController : MonoBehaviour
 
     void HorizontalMovement()
     {
-        rb.linearVelocity = new Vector2(stateMachine.GetMovement() * speed, rb.linearVelocityY);
+        float moveInput = stateMachine.GetMovement();
 
-        if (stateMachine.GetMovement() != 0)
-            spriteRenderer.flipX = Mathf.Sign(stateMachine.GetMovement()) == -1;
+        rb.linearVelocity = new Vector2(moveInput * speed, rb.linearVelocityY);
+
+        if (moveInput != 0)
+            spriteRenderer.flipX = Mathf.Sign(moveInput) == -1;
 
         if (gameObject.tag == "Player")
-            gameManager.isShadowWalk = !wall.isWall;
+        {
+            // Проверяем, уперлись ли мы физически (скорость близка к 0 при зажатой кнопке)
+            bool isPushingWall = moveInput != 0 && Mathf.Abs(rb.linearVelocityX) < 0.05f;
+
+            // Передаем в GameManager чистый статус ходьбы тени
+            gameManager.isShadowWalk = !wall.isWall && !isPushingWall;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

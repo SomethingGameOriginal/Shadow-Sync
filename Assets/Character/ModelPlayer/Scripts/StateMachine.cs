@@ -32,7 +32,7 @@ public class StateMachine : MonoBehaviour
     private Rigidbody2D rb;
     private float Horizontal;
 
-
+    public Wall wall;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -48,7 +48,9 @@ public class StateMachine : MonoBehaviour
 
     void StatSvicher()
     {
-        //print(currentState);
+        bool isStuckInWall = Horizontal != 0 && Mathf.Abs(rb.linearVelocityX) < 0.05f;
+        bool cannotWalk = (wall != null && wall.isWall) || isStuckInWall;
+
         switch (currentState)
         {
             case stateMove.idle:
@@ -57,7 +59,7 @@ public class StateMachine : MonoBehaviour
                     jumpDelay = false;
                     currentState = stateMove.startJump;
                 }
-                else if (Horizontal != 0)
+                else if (Horizontal != 0 && !cannotWalk)
                 {
                     currentState = stateMove.walk;
                 }
@@ -83,6 +85,7 @@ public class StateMachine : MonoBehaviour
                     currentState = stateMove.falling;
                 }
                 break;
+
             case stateMove.rising:
                 if (rb.linearVelocityY < -3)
                 {
@@ -93,6 +96,7 @@ public class StateMachine : MonoBehaviour
                     currentState = stateMove.grounded;
                 }
                 break;
+
             case stateMove.falling:
                 if (groundedDelay.isGroundDelay == true && GameManager.instance.isJumpPressed)
                 {
@@ -110,8 +114,9 @@ public class StateMachine : MonoBehaviour
                     currentState = stateMove.startJump;
                 }
                 break;
+
             case stateMove.grounded:
-                if (Horizontal == 0)
+                if (Horizontal == 0 || cannotWalk)
                 {
                     StartCoroutine(Delay(0, stateMove.idle));
                 }
@@ -135,7 +140,7 @@ public class StateMachine : MonoBehaviour
                 {
                     currentState = stateMove.falling;
                 }
-                else if (Horizontal == 0)
+                else if (Horizontal == 0 || cannotWalk)
                 {
                     currentState = stateMove.idle;
                 }
