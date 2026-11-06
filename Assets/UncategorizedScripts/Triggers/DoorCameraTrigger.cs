@@ -30,6 +30,13 @@ public class DoorCameraTrigger : MonoBehaviour
                 break;
             }
         }
+
+        if (PlayerPrefs.HasKey("CameraX"))
+        {
+            cameraM.transform.position = new Vector3(PlayerPrefs.GetFloat("CameraX"), PlayerPrefs.GetFloat("CameraY"), PlayerPrefs.GetFloat("CameraZ"));
+
+            cameraM.orthographicSize = PlayerPrefs.GetFloat("CameraSize");
+        }
     }
 
     void Update()
@@ -47,6 +54,7 @@ public class DoorCameraTrigger : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
+            SavePositionPlayer(collision);
             StartCoroutine(CameraMoven(cameraPos.transform.position, speed));
         }
     }
@@ -68,6 +76,9 @@ public class DoorCameraTrigger : MonoBehaviour
         }
         cameraM.transform.position = toPosition;
         cameraM.orthographicSize = targetCameraSize;
+
+        SaveCameraPosition();
+
         if (thisSceneNumber != GameManager.instance.sceneNumber)
         {
             GameManager.instance.sceneNumber = thisSceneNumber;
@@ -86,5 +97,22 @@ public class DoorCameraTrigger : MonoBehaviour
                 mirrorTriggerScript.isShadowDie = false;
             }
         }
+    }
+    void SavePositionPlayer(Collider2D collision)
+    {
+        float savePlayerX = collision.transform.position.x;
+        float savePlayerY = collision.transform.position.y;
+
+        PlayerPrefs.SetFloat("savePlayerTransformX", savePlayerX);
+        PlayerPrefs.SetFloat("savePlayerTransformY", savePlayerY);
+        PlayerPrefs.Save();
+    }
+    void SaveCameraPosition()
+    {
+        PlayerPrefs.SetFloat("CameraX", cameraM.transform.position.x);
+        PlayerPrefs.SetFloat("CameraY", cameraM.transform.position.y);
+        PlayerPrefs.SetFloat("CameraZ", cameraM.transform.position.z);
+        PlayerPrefs.SetFloat("CameraSize", cameraM.orthographicSize);
+        PlayerPrefs.Save();
     }
 }

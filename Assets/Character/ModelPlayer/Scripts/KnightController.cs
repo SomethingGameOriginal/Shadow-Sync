@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class KnightController : MonoBehaviour
@@ -21,19 +22,39 @@ public class KnightController : MonoBehaviour
     public GameObject shadowPrefab;
     public GameObject[] shadowSpawnObj;
     private bool isStop = false;
+
+    private GameObject death;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         boxCollider2D = GetComponent<BoxCollider2D>();
-
+        death = transform.Find("Death").gameObject;
         rb.mass = 6;
+
+        float x = PlayerPrefs.GetFloat("savePlayerTransformX");
+        float y = PlayerPrefs.GetFloat("savePlayerTransformY");
+        if (PlayerPrefs.HasKey("savePlayerTransformX"))
+        {
+            gameObject.transform.position = new Vector2(x, y);
+        }
     }
 
     void Update()
     {
         KnightAnimation();
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            gameObject.GetComponent<KnightController>().enabled = false;
+            gameObject.GetComponent<StateMachine>().enabled = false;
+            death.SetActive(true);
+
+            StartCoroutine(RestartingScene());
+        }
     }
     void FixedUpdate()
     {
@@ -122,5 +143,10 @@ public class KnightController : MonoBehaviour
         shadowController.enabled = true;
         isStop = false;
         stateMachine.enabled = true;
+    }
+    IEnumerator RestartingScene()
+    {
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
